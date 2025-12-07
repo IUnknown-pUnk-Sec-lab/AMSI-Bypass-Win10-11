@@ -1,4 +1,4 @@
-##Bypass updated - works again 😄
+##EDIT: DEC 2025 - Bypass updated - works again 😄
 
 # AMSI-Bypass-Win10-11
 Script to bypass AMSI on Win 10 and Win 11 by exploiting AmsiOpenSession.

